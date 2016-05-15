@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IdF-ZP-YSi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="sfj-R5-Gsi">
+            <objects>
+                <viewController id="IdF-ZP-YSi" customClass="ViewController" customModule="marcandoLaRuta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D5y-La-8Mf"/>
+                        <viewControllerLayoutGuide type="bottom" id="MoA-MC-xmm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ttq-if-9t8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-nV-eGo">
+                                <rect key="frame" x="164" y="246" width="240" height="128"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zJT-F5-Fak" userLabel="TypeMap">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Satélite"/>
+                                    <segment title="Híbrido"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="selectMap:" destination="IdF-ZP-YSi" eventType="valueChanged" id="8mx-e0-k4y"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61568627450980395" green="0.8666666666666667" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Heq-nV-eGo" firstAttribute="top" secondItem="Ttq-if-9t8" secondAttribute="top" id="6Bq-SC-HFY"/>
+                            <constraint firstItem="zJT-F5-Fak" firstAttribute="leading" secondItem="Ttq-if-9t8" secondAttribute="leadingMargin" constant="42" id="6up-7D-lD8"/>
+                            <constraint firstItem="zJT-F5-Fak" firstAttribute="centerX" secondItem="Heq-nV-eGo" secondAttribute="centerX" id="CgP-Zm-Owb"/>
+                            <constraint firstItem="Heq-nV-eGo" firstAttribute="leading" secondItem="Ttq-if-9t8" secondAttribute="leading" id="FpB-ed-Z6o"/>
+                            <constraint firstItem="zJT-F5-Fak" firstAttribute="centerX" secondItem="Ttq-if-9t8" secondAttribute="centerX" id="ZKO-s5-muu"/>
+                            <constraint firstItem="zJT-F5-Fak" firstAttribute="top" secondItem="Heq-nV-eGo" secondAttribute="bottom" constant="16" id="dKK-mg-25p">
+                                <variation key="widthClass=compact" constant="17"/>
+                            </constraint>
+                            <constraint firstItem="MoA-MC-xmm" firstAttribute="top" secondItem="zJT-F5-Fak" secondAttribute="bottom" constant="20" id="vtQ-RR-54i"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zJT-F5-Fak"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6up-7D-lD8"/>
+                                <exclude reference="CgP-Zm-Owb"/>
+                                <exclude reference="ZKO-s5-muu"/>
+                                <exclude reference="dKK-mg-25p"/>
+                                <exclude reference="6Bq-SC-HFY"/>
+                                <exclude reference="FpB-ed-Z6o"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zJT-F5-Fak"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6up-7D-lD8"/>
+                                <include reference="CgP-Zm-Owb"/>
+                                <include reference="ZKO-s5-muu"/>
+                                <include reference="dKK-mg-25p"/>
+                                <include reference="6Bq-SC-HFY"/>
+                                <include reference="FpB-ed-Z6o"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="Heq-nV-eGo" id="o6g-3d-j9r"/>
+                        <outlet property="typeMap" destination="zJT-F5-Fak" id="EsS-zc-ivT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pd2-cN-lEd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="356"/>
+        </scene>
+    </scenes>
+</document>
